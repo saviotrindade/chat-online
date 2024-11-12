@@ -29,15 +29,17 @@ wss.on('connection', (ws) => {
         try {
             const data = JSON.parse(message);
 
-            if (!data.action) return ws.send(
+            if (!data.action) {
+                return ws.send(
                     JSON.stringify({
                         status: {
                             http_status_code: 400,
                             http_status_description: 'Bad Request',
                             datails: 'The "action" property is required.'
                         }
-                })
-            );
+                    })
+                );
+            }
     
             switch (data.action) {
                 case ACTIONS.BROADCAST:
@@ -93,7 +95,7 @@ const broadcastMessage = (ws, data) => {
                     })
                 );
             }
-        })
+        });
         
         return {
             status: {
@@ -101,7 +103,7 @@ const broadcastMessage = (ws, data) => {
                 http_status_description: 'OK',
                 details: 'Message successfully broadcasted'
             }
-        }
+        };
 
     } catch (error) {
         return {
@@ -110,6 +112,6 @@ const broadcastMessage = (ws, data) => {
                 http_status_description: 'Internal Server Error',
                 details: 'An unexpected error occurred'
             }
-        }
+        };
     }
 }
