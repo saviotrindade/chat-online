@@ -31,39 +31,36 @@ body {
     width: 50%;
 }
 
-/* MESSAGE */
-.message-history {
+#chat-history {
     padding: 2em;
-    /*   flex: 1; */
     display: flex;
     flex-direction: column;
     gap: 1.5em;
 }
-.current-user-message {
+.message-current-user {
     padding-left: 25%;
 }
-.other-user-message {
+.message-other-user {
     padding-right: 25%;
 }
 
-.other-user-name, .current-user-name {
+.message-sender {
     padding-right: 1em;
 }
 
-.message-time {
+.message-timestamp {
     opacity: 55%;
 }
 
-.message-description {
+.message-content {
     padding-top: 0.2em;
     padding-left: 2em;
 }
 
-.message-description::before {
+.message-content::before {
     content: "- ";
 }
 
-/* INPUT */
 .input-message {
     width: 100%;
     padding: 1em;
@@ -82,7 +79,6 @@ body {
     bottom: 0;
 }
 
-/* FOOTER */
 footer {
     display: flex;
     gap: 2em;
@@ -96,7 +92,6 @@ footer {
 
 }
 
-/* Color Palette */
 .yellow {
     color: #ffff4d;
 }

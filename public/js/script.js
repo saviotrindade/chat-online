@@ -11,7 +11,7 @@ function changeNameColor() {
         'green',
     ];
 
-    const otherUsers = document.getElementsByClassName("other-user-name");
+    const otherUsers = document.getElementsByClassName("message-sender");
 
     Array.from(otherUsers).forEach((e) => {
         const color = Math.floor(Math.random() * colorPalette.length);
